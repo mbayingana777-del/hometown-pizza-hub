@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useCart, cart, cartTotals } from "@/lib/cart-store";
+import { useCart, cart, cartTotals, lineUnitPrice } from "@/lib/cart-store";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2, ShoppingBag, Truck, Store } from "lucide-react";
@@ -45,22 +45,27 @@ export function CartSheet() {
           ) : (
             <div className="space-y-3">
               {c.lines.map((l) => (
-                <div key={l.item.id} className="flex gap-3 rounded-2xl border border-border/60 bg-card p-3 shadow-card animate-float-up">
+                <div key={l.lineId} className="flex gap-3 rounded-2xl border border-border/60 bg-card p-3 shadow-card animate-float-up">
                   <img src={l.item.image} alt="" className="h-20 w-20 shrink-0 rounded-xl object-cover" />
                   <div className="flex flex-1 flex-col">
                     <div className="flex items-start justify-between gap-2">
                       <p className="text-sm font-bold leading-tight">{l.item.name}</p>
-                      <button onClick={() => cart.remove(l.item.id)} className="text-muted-foreground hover:text-destructive">
+                      <button onClick={() => cart.remove(l.lineId)} className="text-muted-foreground hover:text-destructive">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
-                    <p className="mt-auto text-sm font-bold text-primary">${(l.item.price * l.qty).toFixed(2)}</p>
+                    {l.toppings.length > 0 && (
+                      <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
+                        + {l.toppings.join(", ")}
+                      </p>
+                    )}
+                    <p className="mt-auto text-sm font-bold text-primary">${(lineUnitPrice(l) * l.qty).toFixed(2)}</p>
                     <div className="mt-2 flex items-center gap-1 self-start rounded-full border border-border">
-                      <button onClick={() => cart.setQty(l.item.id, l.qty - 1)} className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-secondary">
+                      <button onClick={() => cart.setQty(l.lineId, l.qty - 1)} className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-secondary">
                         <Minus className="h-3 w-3" />
                       </button>
                       <span className="min-w-6 text-center text-sm font-bold">{l.qty}</span>
-                      <button onClick={() => cart.setQty(l.item.id, l.qty + 1)} className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-secondary">
+                      <button onClick={() => cart.setQty(l.lineId, l.qty + 1)} className="flex h-8 w-8 items-center justify-center rounded-full hover:bg-secondary">
                         <Plus className="h-3 w-3" />
                       </button>
                     </div>
