@@ -4,8 +4,8 @@ import { MenuItemCard } from "@/components/MenuItemCard";
 import { menu, combos } from "@/lib/menu-data";
 import { cart } from "@/lib/cart-store";
 import { ArrowRight, Clock, MapPin, Star, Flame, Truck, Award, Zap } from "lucide-react";
-import heroPizza from "@/assets/real-pepperoni.jpg";
-import oven from "@/assets/oven.jpg";
+import heroPizza from "@/assets/hero-pizza-new.jpg";
+import oven from "@/assets/storefront-police.jpg";
 
 export const Route = createFileRoute("/_site/")({
   head: () => ({

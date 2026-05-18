@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import oven from "@/assets/oven.jpg";
-import heroPizza from "@/assets/real-pepperoni.jpg";
+import oven from "@/assets/storefront-police.jpg";
+import heroPizza from "@/assets/hero-pizza-new.jpg";
 
 export const Route = createFileRoute("/_site/about")({
   head: () => ({
