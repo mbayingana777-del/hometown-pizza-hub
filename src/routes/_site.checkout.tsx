@@ -171,12 +171,20 @@ function Checkout() {
           <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
             <h2 className="font-display text-xl font-bold">Order summary</h2>
             <div className="mt-4 space-y-3">
-              {c.lines.map((l) => (
-                <div key={l.item.id} className="flex justify-between gap-3 text-sm">
-                  <span className="flex-1"><strong>{l.qty}×</strong> {l.item.name}</span>
-                  <span className="font-semibold">${(l.item.price * l.qty).toFixed(2)}</span>
-                </div>
-              ))}
+              {c.lines.map((l) => {
+                const unit = l.item.price + l.toppings.length * 0.4;
+                return (
+                  <div key={l.lineId} className="flex justify-between gap-3 text-sm">
+                    <span className="flex-1">
+                      <strong>{l.qty}×</strong> {l.item.name}
+                      {l.toppings.length > 0 && (
+                        <span className="block text-xs text-muted-foreground">+ {l.toppings.join(", ")}</span>
+                      )}
+                    </span>
+                    <span className="font-semibold">${(unit * l.qty).toFixed(2)}</span>
+                  </div>
+                );
+              })}
             </div>
             <div className="mt-4 space-y-1 border-t border-border pt-4 text-sm">
               <div className="flex justify-between text-muted-foreground"><span>Subtotal</span><span>${subtotal.toFixed(2)}</span></div>
