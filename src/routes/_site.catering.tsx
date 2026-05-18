@@ -16,9 +16,9 @@ export const Route = createFileRoute("/_site/catering")({
 });
 
 const packages = [
-  { n: "Squad Pack", p: 79, s: "Feeds 8–12", inc: ["3 × 32-cut pizzas (your choice)", "6 pepperoni rolls", "8 drinks"] },
-  { n: "Office Detail", p: 189, s: "Feeds 20–30", inc: ["6 × 32-cut pizzas (mix it up)", "18 pepperoni rolls", "20 drinks", "Free setup"] },
-  { n: "Big Op", p: 449, s: "Feeds 60–80", inc: ["15 × 32-cut pizzas", "Pepperoni roll tower (40)", "60 drinks", "Free delivery + setup", "Dedicated host"] },
+  { n: "Squad Pack", p: 119, s: "Feeds 8–12", inc: ["3 × 24-cut cheese pizzas", "6 pepperoni rolls", "8 drinks"] },
+  { n: "Office Detail", p: 229, s: "Feeds 20–30", inc: ["6 × 24-cut pizzas (mix it up)", "18 pepperoni rolls", "20 drinks", "Free setup"] },
+  { n: "Big Op", p: 549, s: "Feeds 60–80", inc: ["15 × 24-cut pizzas", "Pepperoni roll tower (40)", "60 drinks", "Free delivery + setup", "Dedicated host"] },
 ];
 
 function Catering() {
