@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 import {
-  LayoutDashboard, PizzaIcon, Calendar, Tag, ShoppingBag, Award, BarChart3, Settings, ArrowLeft,
-  TrendingUp, DollarSign, Users
+  LayoutDashboard, Pizza as PizzaIcon, Calendar, Tag, ShoppingBag, Award, BarChart3, Settings, ArrowLeft,
+  TrendingUp, DollarSign
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -267,4 +267,4 @@ function Admin() {
   );
 }
 
-void Users; // unused import guard
+
