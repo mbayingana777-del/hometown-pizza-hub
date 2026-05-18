@@ -1,10 +1,10 @@
-import cheeseSquare from "@/assets/cheese-square.jpg";
-import cheese32 from "@/assets/cheese-32.jpg";
-import pepperoni24 from "@/assets/pepperoni-24.jpg";
-import pepperoniRolls from "@/assets/pepperoni-rolls.jpg";
+import cheeseSquare from "@/assets/real-cheese.jpg";
+import cheese32 from "@/assets/real-cheese.jpg";
+import pepperoni24 from "@/assets/real-pepperoni.jpg";
+import pepperoniRolls from "@/assets/real-pep-roll.jpg";
 import drinks from "@/assets/drinks.jpg";
 import merchTee from "@/assets/merch-tee.jpg";
-import heroPizza from "@/assets/hero-pizza.jpg";
+import heroPizza from "@/assets/real-pepperoni.jpg";
 
 export type MenuCategory = "Pizzas" | "Take & Bake" | "Rolls" | "Slices" | "Drinks" | "Merch";
 
